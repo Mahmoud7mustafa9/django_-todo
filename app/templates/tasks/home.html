@@ -1,0 +1,73 @@
+<div style = "display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #949499;
+}">
+<h2 style =" background-color: #f3eccf85;
+    width: 80%;
+    height: 11vh;
+    text-align: center;
+    justify-self: center;
+    align-items: center;
+    padding-top: 1em;
+    border-radius: 44%;"> HELLO EVERY BODY !</h2>
+
+<form method="POST" action ="/" style ="
+    display: ruby;
+    width: 80%;
+    height: 13vh;
+    text-align: center;
+    justify-self: center;
+    align-items: center;
+    padding-top: 1em;
+    border-radius: 44%;
+    background-color: #dbdbc1;">
+{% csrf_token %}
+<div style= "padding-left: 2em;
+    width: 40%;
+    height: 52%;
+    border: 2px solid #4040408c;
+    border-radius: 19%;
+    color: #323866;
+    font-weight: bolder;
+">
+{{form.title}}
+</div>
+<input type= "submit" name = "Create TaskS" value ="create task" style = "background-color: #6d6da7;
+    color: antiquewhite;
+    width: 31vh;
+    height: 8vh;
+    font-size: 19px;
+    border-radius: 33%;">
+
+</form>
+
+<div style="width: 70%;
+    text-align: center;
+    background-color: #f5f5dc80;
+    color: #3a3535;
+    font-size: 1.5em;
+    font-weight: bold;
+        margin: 1.5em;">
+{% for task in tasks %}
+<a href ="{% url  'update' task.id %}" style ="background-color: #3d3d66;
+    color: azure;
+    text-decoration: auto;
+    padding: 0.2em;
+    border: 1px solid #fbfbfb;
+    margin: 2em;">update</a>
+<a href ="{% url  'delete' task.id %}" style ="background-color: #3d3d66;
+    color: azure;
+    text-decoration: auto;
+    padding: 0.2em;
+    border: 1px solid #fbfbfb;
+    margin: 2em;" >delete</a> <br>
+{% if task.complete == True %}
+<strike > {{task}} </strike> <br>
+{% else %}
+<span> {{task}}</span> <br> 
+{% endif %}
+<hr>
+{% endfor %}
+</div>

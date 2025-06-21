@@ -1,0 +1,46 @@
+<div style=" background: #d3c9c9a8;
+    margin: 5%;
+    padding: 3% 25%;
+    width: 34%;
+    border: 2px solid grey;
+    border-radius: 48%;">
+<h2> ARE YOU SURE YOU WANNA delete this {{task}} ? </h2>
+<a href ="{% url 'home' %}" style="background-color: #7e7e65;
+    width: 45px;
+    display: block;
+    margin: auto;
+    color: white;
+    text-decoration-line: unset;
+    padding: 5px 7px;
+    height: 30px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 20%;"> back </a> 
+    <br>
+
+<form method = "POST" action ="" >
+{% csrf_token %}
+
+<input type="submit" name = "confirm" value ="delete" style="
+    background-color: #e11b14;
+    width: 13%;
+    display: block;
+    margin: auto;
+    color: white;
+    text-decoration-line: unset;
+    padding: 5px 7px;
+    height: 10%;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 20%;
+    cursor: pointer;
+" >
+
+</form>
+</div>

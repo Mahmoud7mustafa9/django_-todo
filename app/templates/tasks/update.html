@@ -1,0 +1,9 @@
+
+<h2> UPDATE the task</h2>
+
+<form method="POST" action ="/">
+ {% csrf_token %}
+{{form.title}} <br>
+{{form.complete}}
+<input type="submit" value ="update task" >
+</form>
